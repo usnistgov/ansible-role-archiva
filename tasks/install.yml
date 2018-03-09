@@ -84,14 +84,14 @@
   become: yes
   service:
     name: archiva
-    state: running
+    state: started
 
 - name: Wait untils Archiva web API is available
   shell: curl --head --silent http://{{ ansible_host }}:{{ archiva.port }}/
   register: result
   until: result.stdout.find("200 OK") != -1
-  retries: 15
-  delay: 3
+  retries: 20
+  delay: 5
 
 - name: Register service
   become: yes
