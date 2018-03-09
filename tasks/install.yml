@@ -82,9 +82,12 @@
 
 - name: Start service
   become: yes
-  service:
+  systemd:
     name: archiva
     state: started
+#  service:
+#    name: archiva
+#    state: started
 
 - name: Wait untils Archiva web API is available
   shell: curl --head --silent http://{{ ansible_host }}:{{ archiva.port }}/
