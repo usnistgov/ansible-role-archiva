@@ -82,7 +82,7 @@
 
 - name: Start service
   become: yes
-  shell: sudo service archiva start
+  shell: /etc/init.d/archiva start
 #  service:
 #    name: archiva
 #    state: started
