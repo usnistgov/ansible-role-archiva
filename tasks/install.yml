@@ -82,9 +82,7 @@
 
 - name: Start service
   become: yes
-  systemd:
-    name: archiva
-    state: started
+  shell: /etc/init.d/archiva start
 #  service:
 #    name: archiva
 #    state: started
