@@ -96,6 +96,6 @@
 
 - name: Register service
   become: yes
-  service:
+  systemd:
     name: archiva
     enabled: yes
