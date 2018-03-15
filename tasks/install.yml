@@ -80,12 +80,12 @@
     replace: '<expiration>\n<enabled>{{ archiva.passwordExpirationEnabled }}</enabled>'
   when: archiva.passwordExpirationEnabled is defined
 
-- copy:
-    become: yes
-    src: /home/vagrant/cpswt/cpswt-devtools/config/archiva.service
-    dest: /etc/systemd/archiva.service
-    owner: root
-    group: root
+#- copy:
+#    become: yes
+#    src: /home/vagrant/cpswt/cpswt-devtools/config/archiva.service
+#    dest: /etc/systemd/archiva.service
+#    owner: root
+#    group: root
 
 - name: Start service
   become: yes
@@ -101,8 +101,8 @@
   retries: 20
   delay: 5
 
-- name: Register service
-  become: yes
-  systemd:
-    name: archiva
-    enabled: yes
+#- name: Register service
+#  become: yes
+#  systemd:
+#    name: archiva
+#    enabled: yes
